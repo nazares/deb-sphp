@@ -10,18 +10,13 @@ get_ostype () {
 	awk -F= '$1=="ID_LIKE" { print $2 ;}' /etc/os-release
 }
 
-os_distr=$(get_distr)
+# Check if os type is debian-based
+os_type=$(get_ostype)
 
-# TODO make os check function
-
-#echo $os_distr;
-
-case $os_distr in
-    Elementary) echo "Elementary OS";;
-    Ubuntu) echo "Ubuntu";;
-    Debian) echo "Debian";;
-    *) echo "Unsupported OS"; exit 1;;
-esac
+if [[ ! $os_type =~ "debian" ]]; then
+	echo -e "${RED}Unsupported OS. Only debian-based systems are allowed${NC}"
+	exit 1
+fi
 
 versions=(`update-alternatives --list php | grep -oP "(\d\.\d+?)"`)
 
