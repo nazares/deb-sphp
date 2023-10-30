@@ -18,6 +18,7 @@ if [[ ! $os_type =~ "debian" ]]; then
 	exit 1
 fi
 
+# get installed php versions
 versions=(`update-alternatives --list php | grep -oP "(\d\.\d+?)"`)
 
 if [ ! -e /usr/bin/lsb_release ]; then
