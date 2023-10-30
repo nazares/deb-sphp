@@ -6,9 +6,8 @@ GREEN='\e[0;32m'
 YELLOW='\e[0;33m'
 NC='\e[0m'
 
-# function to get lsb_release to check deb-based distro
-get_distr () {
-    lsb_release -is
+get_ostype () {
+	awk -F= '$1=="ID_LIKE" { print $2 ;}' /etc/os-release
 }
 
 os_distr=$(get_distr)
