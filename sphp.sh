@@ -1,6 +1,7 @@
 #!/bin/bash
 # created by: Sergei Nazarenko <nazares@icloud.com>
 
+# CLI colors
 RED='\e[0;31m'
 GREEN='\e[0;32m'
 YELLOW='\e[0;33m'
