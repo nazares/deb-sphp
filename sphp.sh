@@ -18,7 +18,7 @@ fi
 mapfile -t versions < <(update-alternatives --list php | grep -oP "(\d\.\d+?)")
 
 if [ ! $# -eq 1 ]; then
-	printf 'usage: sphp version\n'
+	printf 'usage: sphp <version>\n'
 	printf -v joined '%s,' "${versions[@]}"
 	printf '\n\e[0;33minstalled php versions: %s\e[0m\n\n' "${joined%,}"
 	exit 1

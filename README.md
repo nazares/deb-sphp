@@ -27,16 +27,16 @@ Simply type `sphp` and the version you want to switch:
 sphp 8.0 #to switch to PHP 8.0 version
 sphp 8.1 #to switch to PHP 8.1 version
 sphp 8.2 #to switch to PHP 8.2 version
-...
-etc.
+# ...
+# etc.
 ```
 
 to get installed versions of PHP just run:
 
 ```bash
 sphp
-# Please specify a php version to switch to:
-# 8.0 8.1 8.2
+    # usage: sphp <version>
+    # installed php versions: 8.0,8.1,8.2
 ```
 
 ## License
