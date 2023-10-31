@@ -1,5 +1,7 @@
 # Debian-based distributive PHP Switcher
 
+![cover](cover.png)
+
 Debian PHP switcher is a simple script to switch your Apache and CLI configs quickly between major versions of PHP.
 This supports any version of php installed onto the Debian-based system.
 
