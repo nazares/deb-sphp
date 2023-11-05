@@ -5,6 +5,10 @@ get_ostype () {
 	awk -F= '$1=="ID_LIKE" { print $2 ;}' /etc/os-release
 }
 
+restart_apache () {
+	sudo systemctl restart apache2
+}
+
 # Check if os type is debian-based
 os_type=$(get_ostype)
 
@@ -44,7 +48,8 @@ printf ' from PHP %s\e[0m\n' "$switch_from"
 
 if [ "$switch_from" == "$switch_to" ]; then
 	printf 'PHP %s has been already set\n' "$switch_to"
-	exit 1;
+	restart_apache
+	exit 1
 fi
 
 printf '\e[0;33mthis will required %s privileges\e[0m\n\n' "\`sudo\`"
@@ -62,7 +67,7 @@ sudo a2enmod php"$switch_to"
 read -r -p $'\e[0;32mActivate new config \'sudo systemctl restart apache2\' (y/N)?: \e[0m' yn
 
 case $yn in
-	[Yy]* ) sudo systemctl restart apache2;;
+	[Yy]* ) restart_apache;;
 	[Nn]* ) exit;;
 	*) exit;;
 esac
