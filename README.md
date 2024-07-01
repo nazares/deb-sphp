@@ -19,6 +19,12 @@ curl -L https://raw.githubusercontent.com/nazares/deb-sphp/main/sphp.sh > /usr/l
 chmod +x /usr/local/bin/sphp
 ```
 
+### Composer installation
+
+```bash
+composer global require nazares/deb-sphp
+```
+
 ## Usage
 
 Simply type `sphp` and the version you want to switch:
