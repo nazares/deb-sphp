@@ -1,0 +1,13 @@
+{
+    "name" : "nazares/deb-sphp",
+    "description": "Script to switch installed PHP versions on Debian based linux systems",
+    "license": "MIT",
+    "authors" : [
+        {
+            "name": "Sergei Nazarenko",
+            "email": "nazares@icloud.com"
+        }
+    ],
+    "require": {},
+    "bin": "sphp"
+}
